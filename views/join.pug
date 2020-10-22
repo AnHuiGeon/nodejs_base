@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/css/join_css.css')
+    .wrapper.fadeInDown
+    #formContent
+        form#login-form(action='/auth/join', method='post')
+            br
+            label.joinLabel(for='email') email
+            input#email.fadeIn.second(type='text', name='email', placeholder='メールアドレス', autofocus, required)
+            br
+            label.joinLabel(for='password') password
+            input#password.fadeIn.third(type='password', name='password', placeholder='パスワード', required)
+            br
+            label.joinLabel(for='birth') birth
+            input#birth.fadeIn.third(type='text', name='birth', placeholder='yyyy-mm-dd')
+            br
+            label.joinLabel(for='name') name
+            input#name.fadeIn.third(type='text', name='name', placeholder='名前', required)
+            br
+            label.joinLabel(for='address') address
+            input#address.fadeIn.third(type='text', name='address', placeholder='住所')
+            br
+            label.joinLabel(for='tel') tel
+            input#tel.fadeIn.third(type='text', name='tel', placeholder='電話番号')
+            br
+            br
+            #formFooter
+                button(type='submit', value='Sign Up') Sign Up
+        if loginError
+            .error-message = loginError
+    .wrapper.fadeInDown

@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet', href='/css/layout.css')
+    script(src="https://unpkg.com/axios/dist/axios.min.js")
+  include header.pug
+  article
+    block content
+  include footer.pug

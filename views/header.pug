@@ -1,0 +1,19 @@
+body
+    header#fixed-bar.fixed-bar-box-shadow
+        #fixed-bar-wrap
+            h1#fixed-bar-logo-title
+                a(href='/')
+                    span.sr-only のこりおごり
+            section#fixed-bar-download
+                a.header_nav(href='/stores')
+                    .fixed-download-text STORES
+                a.header_nav(href='/welfareorgs')
+                    .fixed-download-text WELFAREORGS
+                if user && user.id
+                    a.header_nav(href='/mypage')
+                        .fixed-download-text MYPAGE
+                    a.header_nav(href='/auth/logout')
+                        .fixed-download-text LOGOUT
+                else
+                    a.header_nav(href='/login')
+                        .fixed-download-text LOGIN

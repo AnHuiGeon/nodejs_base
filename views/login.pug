@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/css/login_css.css')
+  .wrapper.fadeInDown
+  #formContent
+    form#login-form(action='/auth/login', method='post')
+      input#email.fadeIn.second(type='email', name='email', placeholder='email', autofocus)
+      input#password.fadeIn.third(type='password', name='password', placeholder='password')
+      button#join(type='submit', value='LogIn') LogIn
+    if loginError
+      .error-message = loginError
+    a#signup.btn(href='/join') Sign Up
+    #formFooter
+      a.underlineHover(href='#') Forgot Password?
+  .wrapper.fadeInDown
